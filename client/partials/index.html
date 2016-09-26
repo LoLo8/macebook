@@ -1,0 +1,20 @@
+<h1>Show All Friends</h1>
+<a href="#/friends/new"><button>New Friend</button></a>
+<input type="text" name="search" ng-model="searchText">
+<hr>
+<table>
+	<tr >
+		<th>Name</th>
+		<th>Show</th>
+		<th>Update</th>
+		<th>Delete</th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="friend in friends | filter:searchText">
+		<td>{{friend.firstName}} {{friend.lastName}}</td>
+		<td><a ng-href="#/friends/{{friend._id}}">Show</a></td>
+		<td><a ng-href="#/friends/{{friend._id}}/edit">Update</a></td>
+		<td><a href="#" ng-click="delete(friend._id)">Delete</a></td>
+		<td><input type="hidden" value={{friend.birthday}}></td>
+	</tr>
+</table>
