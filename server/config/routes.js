@@ -1,4 +1,10 @@
 var friendsController = require('../controllers/friends.js')
+var personasController = require('../controllers/personas.js')
+var usersController = require('../controllers/users.js')
+var eventsController = require('../controllers/events.js')
+var organizationsController = require('../controllers/organizations.js')
+var friendsController = require('../controllers/friends.js')
+
 
 console.log("future routes loading");
 

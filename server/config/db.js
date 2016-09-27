@@ -10,7 +10,7 @@ var reg = new RegExp(".js$", "i");
 // dir where our models are located
 var models_path = __dirname + "/../models";
 
-var dbURI = 'mongodb://localhost/friendsDB';
+var dbURI = 'mongodb://localhost/macebookDB';
 mongoose.connect(dbURI);
 
 // Connection events
