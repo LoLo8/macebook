@@ -1,0 +1,40 @@
+<div ng-controller="usersController">
+	<h1>Hello there! LoginReg :)</h1>
+	<br>
+	<p><span ng-show="errors.errors.email.properties.type === 'required'">Email is required</span></p>
+	<p><span ng-show="errors.errors.first_name.properties.type === 'required'">First Name is required</span></p>
+	<p><span ng-show="errors.errors.last_name.properties.type === 'required'">Last Name is required</span></p>
+	<p><span ng-show="errors.errors.password.properties.type === 'required'">Password is required</span></p>
+	<p><span ng-show="errors.errors.password.properties.type === 'minlength'">Minimum password length is 8 characters</span></p>
+	<p><span ng-show="errors.errors.password_con.properties.type === 'required'">Password Confirmation is required</span></p>
+	<p><span ng-show="errors.errors.birthday.properties.type === 'required'">Birthday is required</span></p>
+	<p><span ng-show="newUser.password !== newUser.password_con">Password and Password Confirmation must match</span></p>
+	<br>
+	<h2>Register</h2>
+	<form name="newUser" ng-submit="userReg()">
+		<label>Email</label>
+		<input type="text" ng-model="newUser.email">
+		<label>First Name</label>
+		<input type="text" ng-model="newUser.first_name">
+		<label>Last Name</label>
+		<input type="text" ng-model="newUser.last_name">
+		<label>Password</label>
+		<input type="password" ng-model="newUser.password">
+		<label>Password Confirmation</label>
+		<input type="password" ng-model="newUser.password_con">
+		<label>Birthday</label>
+		<input type="date" ng-model="newUser.birthday">
+		<input type="submit" value="Register">
+	</form>
+	<br>
+	{{ login_errors.errors.login_reg.message }}
+	<br>
+	<h2>Login</h2>
+	<form ng-submit="loginReg()">
+		<label>Email</label>
+		<input type="text" ng-model="possibleUser.email">
+		<label>Password</label>
+		<input type="password" ng-model="possibleUser.password">
+		<input type="submit" value="Login">
+	</form>
+</div>
